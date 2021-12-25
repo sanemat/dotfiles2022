@@ -114,3 +114,5 @@ ASDF_CONFIG_FILE="$HOME/go/src/github.com/sanemat/dotfiles2022/asdfrc"
 zinit ice wait'0'; zinit light asdf-vm/asdf
 
 fpath=(${ASDF_DIR}/completions $fpath)
+
+alias g='cd $(ghq root)/$(ghq list | fzf --reverse)'
