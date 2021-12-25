@@ -87,6 +87,19 @@ zinit light "junegunn/fzf"
 zinit ice from"gh-r" as"program" cp"jq* -> jq"
 zinit light "stedolan/jq"
 
+# direnv
+zinit lucid from"gh-r" as"program" mv"direnv* -> direnv" pick"direnv" \
+  atclone'./direnv hook zsh > zhook.zsh' atpull'%atclone' \
+  src="zhook.zsh" light-mode for @direnv/direnv
+p=$PWD
+while [[ $p != '/' ]]; do
+  if [[ -f $p/.envrc ]]; then
+    direnv allow
+    break
+  fi
+  p=$(dirname $p)
+done
+
 # Save command history
 HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
 HISTSIZE=10000
