@@ -1,0 +1,16 @@
+[ghq]
+   root = ~/go/src
+[user]
+	email = o.gata.ken@gmail.com
+	name = Matt (Sanemat) (Murahashi Kenichi)
+[core]
+	editor = code --wait
+	excludesfile = ~/go/src/github.com/sanemat/dotfiles2022/gitignore-system
+[color]
+	ui = auto
+[alias]
+  delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
+[fetch]
+	prune = true
+[init]
+	defaultBranch = main

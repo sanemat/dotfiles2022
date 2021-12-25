@@ -1,0 +1,6 @@
+.DS_Store
+.rbenv-version
+.ruby-version
+/.idea/
+*un~
+*.iml
