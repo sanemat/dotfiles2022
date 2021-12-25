@@ -9,7 +9,7 @@ case "$OSTYPE" in
   ;;
   linux*)
     # If their is no crontab, then it will fail.
-    (crontab -l ; echo '* * * * * DISPLAY=:0.0 /usr/bin/notify-send "Cron Jedi" "Sit up straight"') | sort - | uniq - | crontab -
+    (crontab -l ; echo '* * * * * DISPLAY=:0.0 /usr/bin/notify-send -u "critical" "Cron Jedi" "Sit up straight"') | sort - | uniq - | crontab -
   ;;
   dragonfly*|freebsd*|netbsd*|openbsd*)
     # ...
