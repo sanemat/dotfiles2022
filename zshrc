@@ -84,6 +84,9 @@ zinit light "junegunn/fzf-bin"
 zinit ice as"program"
 zinit light "junegunn/fzf"
 
+zinit ice from"gh-r" as"program" cp"jq* -> jq"
+zinit light "stedolan/jq"
+
 # Save command history
 HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
 HISTSIZE=10000
