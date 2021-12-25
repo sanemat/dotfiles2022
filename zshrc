@@ -18,6 +18,20 @@ autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 ### End of Zinit's installer chunk
 
+## command completion
+zinit ice wait'0'; zinit light zsh-users/zsh-completions
+
+## case insensitive
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+## can move with tab
+zstyle ':completion:*:default' menu select=1
+
+# syntax highlighting
+zinit light zsh-users/zsh-syntax-highlighting
+
+# suggestions
+zinit light zsh-users/zsh-autosuggestions
+
 # in ~/.zshenv, executed `unsetopt GLOBAL_RCS` and ignored /etc/zshrc
 [ -r /etc/zshrc ] && . /etc/zshrc
 [ -r /etc/zsh/zshrc ] && . /etc/zsh/zshrc
