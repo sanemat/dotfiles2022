@@ -18,6 +18,9 @@ autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 ### End of Zinit's installer chunk
 
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
+
 ## command completion
 zinit ice wait'0'; zinit light zsh-users/zsh-completions
 
@@ -86,5 +89,3 @@ ASDF_CONFIG_FILE="$HOME/go/src/github.com/sanemat/dotfiles2022/asdfrc"
 zinit light asdf-vm/asdf
 
 fpath=(${ASDF_DIR}/completions $fpath)
-autoload -U +X compinit && compinit
-autoload -U +X bashcompinit && bashcompinit
