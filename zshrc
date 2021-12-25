@@ -24,3 +24,31 @@ autoload -Uz _zinit
 
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
+
+export PATH
+export MANPATH
+# -U: keep only the first occurrence of each duplicated value
+# ref. http://zsh.sourceforge.net/Doc/Release/Shell-Builtin-Commands.html#index-typeset
+typeset -U PATH path MANPATH manpath
+
+export GOPATH="$HOME/go"
+
+path=(
+  ${HOME}/bin(N-/)
+  ${HOME}/.ghg/bin(N-/)
+  ${GOPATH}/bin(N-/)
+  ${HOME}/.cargo/bin(N-/)
+  ${HOME}/Android/Sdk/tools(N-/)
+  ${HOME}/Android/Sdk/tools/bin(N-/)
+  ${HOME}/Android/Sdk/platform-tools(N-/)
+  ${GOPATH}/src/chromium.googlesource.com/chromium/tools/depot_tools(N-/)
+  ${HOME}/homebrew/bin(N-/)
+  ${HOME}/homebrew/sbin(N-/)
+  /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin(N-/)
+  ${path}
+)
+
+manpath=(
+  ${HOME}/homebrew/share/man(N-/)
+  ${manpath}
+)
