@@ -17,3 +17,10 @@ source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 ### End of Zinit's installer chunk
+
+# in ~/.zshenv, executed `unsetopt GLOBAL_RCS` and ignored /etc/zshrc
+[ -r /etc/zshrc ] && . /etc/zshrc
+[ -r /etc/zsh/zshrc ] && . /etc/zsh/zshrc
+
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
