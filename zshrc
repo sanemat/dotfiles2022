@@ -61,3 +61,9 @@ setopt append_history no_inc_append_history no_share_history
 
 # prompt
 PS1="${debian_chroot:+($debian_chroot)}\$ "
+
+zinit light asdf-vm/asdf
+
+fpath=(${ASDF_DIR}/completions $fpath)
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
