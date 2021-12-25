@@ -70,10 +70,19 @@ manpath=(
   ${manpath}
 )
 
+zinit snippet OMZL::git.zsh
+zinit snippet OMZP::git
+
 zinit ice from"gh-r" as"program" cp"ghq_*/ghq -> ghq" pick"ghq"
 zinit light x-motemen/ghq
 zinit ice silent as"completion"
 zinit snippet https://github.com/x-motemen/ghq/blob/master/misc/zsh/_ghq
+
+zinit ice from"gh-r" as"program"
+zinit light "junegunn/fzf-bin"
+
+zinit ice as"program"
+zinit light "junegunn/fzf"
 
 # Save command history
 HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
