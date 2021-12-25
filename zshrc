@@ -84,6 +84,10 @@ zinit light "junegunn/fzf-bin"
 zinit ice as"program"
 zinit light "junegunn/fzf"
 
+# zsh-fzf-history-search
+zinit ice lucid wait'0'
+zinit light joshskidmore/zsh-fzf-history-search
+
 zinit ice from"gh-r" as"program" cp"jq* -> jq"
 zinit light "stedolan/jq"
 
