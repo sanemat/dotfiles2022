@@ -67,6 +67,11 @@ manpath=(
   ${manpath}
 )
 
+zinit ice from"gh-r" as"program" mv"ghq_*/ghq -> ghq" pick"**/ghq"
+zinit light x-motemen/ghq
+zinit ice silent as"completion"
+zinit snippet https://github.com/x-motemen/ghq/blob/master/misc/zsh/_ghq
+
 # Save command history
 HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
 HISTSIZE=10000
