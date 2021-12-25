@@ -62,6 +62,8 @@ setopt append_history no_inc_append_history no_share_history
 # prompt
 PS1="${debian_chroot:+($debian_chroot)}\$ "
 
+ASDF_CONFIG_FILE="$HOME/go/src/github.com/sanemat/dotfiles2022/asdfrc"
+
 zinit light asdf-vm/asdf
 
 fpath=(${ASDF_DIR}/completions $fpath)
