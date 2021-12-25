@@ -30,10 +30,10 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*:default' menu select=1
 
 # syntax highlighting
-zinit light zsh-users/zsh-syntax-highlighting
+zinit ice wait'0'; zinit light zsh-users/zsh-syntax-highlighting
 
 # suggestions
-zinit light zsh-users/zsh-autosuggestions
+zinit ice wait'0'; zinit light zsh-users/zsh-autosuggestions
 
 # in ~/.zshenv, executed `unsetopt GLOBAL_RCS` and ignored /etc/zshrc
 [ -r /etc/zshrc ] && . /etc/zshrc
@@ -86,6 +86,6 @@ PS1="${debian_chroot:+($debian_chroot)}\$ "
 
 ASDF_CONFIG_FILE="$HOME/go/src/github.com/sanemat/dotfiles2022/asdfrc"
 
-zinit light asdf-vm/asdf
+zinit ice wait'0'; zinit light asdf-vm/asdf
 
 fpath=(${ASDF_DIR}/completions $fpath)
