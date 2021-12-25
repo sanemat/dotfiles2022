@@ -52,3 +52,12 @@ manpath=(
   ${HOME}/homebrew/share/man(N-/)
   ${manpath}
 )
+
+# Save command history
+HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt append_history no_inc_append_history no_share_history
+
+# prompt
+PS1="${debian_chroot:+($debian_chroot)}\$ "
