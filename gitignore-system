@@ -4,3 +4,4 @@
 /.idea/
 *un~
 *.iml
+*.~lock*
