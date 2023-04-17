@@ -5,3 +5,4 @@
 *un~
 *.iml
 *.~lock*
+.tool-versions
