@@ -6,6 +6,7 @@
 [core]
 	editor = code --wait
 	excludesfile = ~/go/src/github.com/sanemat/dotfiles2022/gitignore-system
+	autocrlf = false
 [color]
 	ui = auto
 [alias]
