@@ -15,3 +15,5 @@ keymap:
       CapsLock-g: Minus
       CapsLock-f: Enter
       CapsLock-Slash: Delete
+      CapsLock-Dot: Henkan
+      CapsLock-Comma: Muhenkan
