@@ -1,0 +1,17 @@
+# A workaround for the Wayland bug: https://github.com/k0kubun/xremap/issues/179
+keypress_delay_ms: 20
+
+virtual_modifiers:
+  - CapsLock
+keymap:
+  - remap:
+      CapsLock-i: Up
+      CapsLock-j: Left
+      CapsLock-k: Down
+      CapsLock-l: Right
+      CapsLock-u: Home
+      CapsLock-Semicolon: End
+      CapsLock-h: BackSpace
+      CapsLock-g: Minus
+      CapsLock-f: Enter
+      CapsLock-Slash: Delete
