@@ -17,3 +17,20 @@ keymap:
       CapsLock-Slash: Delete
       CapsLock-Dot: Henkan
       CapsLock-Comma: Muhenkan
+# cat /etc/systemd/system/xremap.service
+# ----
+# [Unit]
+# Description = xremap daemon
+
+# [Service]
+# ExecStart = /usr/local/bin/xremap /usr/local/etc/xremap/xremap.yml
+# Restart = always
+# Type = simple
+
+# [Install]
+# WantedBy = multi-user.target
+# ----
+# sudo systemctl list-unit-files --type=service | grep xremap
+# sudo systemctl enable xremap
+# sudo systemctl start xremap
+# sudo systemctl status xremap
