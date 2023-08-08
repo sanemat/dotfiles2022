@@ -17,13 +17,14 @@ keymap:
       CapsLock-Slash: Delete
       CapsLock-Dot: Henkan
       CapsLock-Comma: Muhenkan
+      CapsLock-p: Print
 # cat /etc/systemd/system/xremap.service
 # ----
 # [Unit]
 # Description = xremap daemon
 
 # [Service]
-# ExecStart = /usr/local/bin/xremap /usr/local/etc/xremap/xremap.yml
+# ExecStart = /usr/local/bin/xremap /usr/local/etc/xremap/xremap.yml --watch
 # Restart = always
 # Type = simple
 
