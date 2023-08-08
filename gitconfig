@@ -15,3 +15,6 @@
 	prune = true
 [init]
 	defaultBranch = main
+# override specific settings
+#[includeIf "gitdir:~/go/src/github.com/example/"]
+#        path = ~/.gitconfig-example
