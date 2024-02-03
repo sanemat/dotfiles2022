@@ -120,3 +120,5 @@ zinit ice wait'0'; zinit light asdf-vm/asdf
 fpath=(${ASDF_DIR}/completions $fpath)
 
 alias g='cd $(ghq root)/$(ghq list | fzf --reverse)'
+
+ASDF_GOLANG_MOD_VERSION_ENABLED=true
