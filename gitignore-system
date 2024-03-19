@@ -6,3 +6,4 @@
 *.iml
 *.~lock*
 .tool-versions
+.vscode
