@@ -3,6 +3,7 @@
 [user]
 	email = o.gata.ken@gmail.com
 	name = Matt (Sanemat) (Murahashi Kenichi)
+	signingkey = ~/.ssh/id_ed25519.pub
 [core]
 	editor = code --wait
 	excludesfile = ~/go/src/github.com/sanemat/dotfiles2022/gitignore-system
@@ -21,3 +22,9 @@
 # override specific settings
 #[includeIf "gitdir:~/go/src/github.com/example/"]
 #        path = ~/.gitconfig-example
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+[gpg "ssh"]
+	allowdSignersFile = ~/.ssh/allowd_signers
