@@ -73,36 +73,12 @@ manpath=(
 zinit snippet OMZL::git.zsh
 zinit snippet OMZP::git
 
-zinit ice from"gh-r" as"program" cp"ghq_*/ghq -> ghq" pick"ghq"
-zinit light x-motemen/ghq
 zinit ice silent as"completion"
-zinit snippet https://github.com/x-motemen/ghq/blob/master/misc/zsh/_ghq
-
-zinit ice from"gh-r" as"program"
-zinit light "junegunn/fzf-bin"
-
-zinit ice as"program"
-zinit light "junegunn/fzf"
+zinit snippet https://raw.githubusercontent.com/x-motemen/ghq/master/misc/zsh/_ghq
 
 # zsh-fzf-history-search
 zinit ice lucid wait'0'
 zinit light joshskidmore/zsh-fzf-history-search
-
-zinit ice from"gh-r" as"program" cp"jq* -> jq"
-zinit light "stedolan/jq"
-
-# direnv
-zinit lucid from"gh-r" as"program" mv"direnv* -> direnv" pick"direnv" \
-  atclone'./direnv hook zsh > zhook.zsh' atpull'%atclone' \
-  src="zhook.zsh" light-mode for @direnv/direnv
-p=$PWD
-while [[ $p != '/' ]]; do
-  if [[ -f $p/.envrc ]]; then
-    direnv allow
-    break
-  fi
-  p=$(dirname $p)
-done
 
 # Save command history
 export HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
@@ -115,10 +91,12 @@ export PS1="${debian_chroot:+($debian_chroot)}\$ "
 
 ASDF_CONFIG_FILE="$HOME/go/src/github.com/sanemat/dotfiles2022/asdfrc"
 
-zinit ice wait'0'; zinit light asdf-vm/asdf
-
 fpath=(${ASDF_DIR}/completions $fpath)
 
 alias g='cd $(ghq root)/$(ghq list | fzf --reverse)'
 
 export ASDF_GOLANG_MOD_VERSION_ENABLED=true
+
+# . "$HOME/.asdf/asdf.sh"
+export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:$PATH"
+export AQUA_GLOBAL_CONFIG="${AQUA_GLOBAL_CONFIG:-}:${XDG_CONFIG_HOME:-$HOME/.config}/aquaproj-aqua/aqua.yaml"
