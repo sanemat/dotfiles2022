@@ -8,6 +8,7 @@
 	editor = code --wait
 	excludesfile = ~/go/src/github.com/sanemat/dotfiles2022/gitignore-system
 	autocrlf = false
+	pager = env LESSCHARSET=utf-8 less -FRX
 [color]
 	ui = auto
 [alias]
