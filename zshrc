@@ -97,8 +97,27 @@ alias g='cd $(ghq root)/$(ghq list | fzf --reverse)'
 
 export ASDF_GOLANG_MOD_VERSION_ENABLED=true
 
-# . "$HOME/.asdf/asdf.sh"
+. "$HOME/.asdf/asdf.sh"
 export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:$PATH"
 export AQUA_GLOBAL_CONFIG="${AQUA_GLOBAL_CONFIG:-}:${XDG_CONFIG_HOME:-$HOME/.config}/aquaproj-aqua/aqua.yaml"
 
-eval "$(ssh-agent -s)"
+SSH_ENV="$HOME/.ssh/agent.env"
+
+# Start the agent if it's not running
+function start_agent {
+    ssh-agent -s > "${SSH_ENV}"
+    chmod 600 "${SSH_ENV}"
+    . "${SSH_ENV}" > /dev/null
+    ssh-add
+}
+
+# Source the agent's environment variables
+if [ -f "${SSH_ENV}" ]; then
+    . "${SSH_ENV}" > /dev/null
+    # Check if the agent is actually running
+    ps -p ${SSH_AGENT_PID} > /dev/null || {
+        start_agent;
+    }
+else
+    start_agent;
+fi
