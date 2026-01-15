@@ -7,3 +7,4 @@
 *.~lock*
 .tool-versions
 .vscode
+.envrc
