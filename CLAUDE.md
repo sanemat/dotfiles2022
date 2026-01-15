@@ -6,12 +6,16 @@
 - Avoid unnecessary words
 
 ## Git Workflow
-- Always create a branch before work  
+- Always create a branch before work
 ```
-
 git checkout -b <branch-name> origin/main
-
 ```
+
+- Always use full command when pushing
+```
+git push origin <branch-name>
+```
+- Do not use short forms like `git push` alone
 
 ## Commits
 - Use **Conventional Commits (Angular style)**  
