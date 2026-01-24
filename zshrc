@@ -53,6 +53,7 @@ export GOPATH="$HOME/go"
 path=(
   ${HOME}/bin(N-/)
   ${HOME}/.ghg/bin(N-/)
+  ${HOME}/.local/bin(N-/)
   ${GOPATH}/bin(N-/)
   ${HOME}/.cargo/bin(N-/)
   ${HOME}/Android/Sdk/tools(N-/)
